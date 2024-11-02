@@ -8,6 +8,8 @@ import flixel.effects.FlxFlicker;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
+import haxe.Json;
+import openfl.Assets;
 
 class MainMenuState extends MusicBeatState
 {
@@ -20,7 +22,17 @@ class MainMenuState extends MusicBeatState
 
 	private static var char:FlxSprite;
 
+	var characters:FlxTypedGroup<FlxSprite>;
+
 	var menuItems:FlxTypedGroup<FlxSprite>;
+
+/*	var jsonString:String = Paths.getTextFromFile("images/charactersData.json");
+	var JSON:Dynamic = tjson.TJSON.parse(jsonString);
+
+	var characterImage = JSON.asset;
+	var characterAnim = JSON.idleAnimation;
+	var characterPlay = JSON.play; */
+
 
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -38,6 +50,15 @@ class MainMenuState extends MusicBeatState
 	}
 	override function create()
 	{
+
+
+/*		var JSON:Dynamic = tjson.TJSON.parse(jsonString);
+
+// Now you can access the properties of JSON
+var characterImage = JSON.asset;
+var characterAnim = JSON.idleAnimation;
+var characterPlay = JSON.play; */
+		
 
 		FlxG.camera.zoom = 1;
 
@@ -88,9 +109,9 @@ class MainMenuState extends MusicBeatState
 		add(menuItems);
 
 		char = new FlxSprite(680, 0);
-		char.frames = Paths.getSparrowAtlas('characters/GF_assets');
-		char.animation.addByPrefix('idle', 'GF Bop', 24);
-		char.animation.addByPrefix('hey!', 'GF Cheer', 24, false);
+		char.frames = Paths.getSparrowAtlas('menuCharacter');
+		char.animation.addByPrefix('idle', 'idle', 24);
+		char.animation.addByPrefix('hey!', 'hey', 24, false);
 		char.animation.play('idle');
 		char.scrollFactor.set(0, yScroll + 0.1);
 		char.antialiasing = false;

@@ -392,7 +392,7 @@ class Paths
 
 	#if MODS_ALLOWED
 	inline static public function mods(key:String = '')
-		return 'mods/' + key;
+		return 'modifickayshuns/' + key;
 
 	inline static public function modsFont(key:String)
 		return modFolders('fonts/' + key);
@@ -449,7 +449,7 @@ class Paths
 				}
 				#end
 			}
-			return 'mods/' + key;
+			return 'modifickayshuns/' + key;
 		}
 	
 		#if linux

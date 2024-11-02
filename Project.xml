@@ -100,7 +100,7 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
 
 	<section if="MODS_ALLOWED">
-		<assets path='example_mods' rename='modificuliarations' embed='false' type='template'/>
+		<assets path='example_mods' rename='modifickayshuns' embed='false' type='template'/>
 	</section>
 	<assets path='art/readme.txt' rename='readeth_the_me.txt' />
 
