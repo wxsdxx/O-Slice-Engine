@@ -37,7 +37,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		//'credits',
+		'credits',
 		'options'
 	];
 
@@ -153,7 +153,7 @@ var characterPlay = JSON.play; */
 		fnfVer.alpha = 0.5;
 		psychVer.alpha = 0.5;
 		add(psychVer);
-		add(fnfVer);
+		//add(fnfVer);
 		//var fnfVer:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' ", 12);
 	
 		changeItem();
@@ -207,7 +207,7 @@ var characterPlay = JSON.play; */
 				
 					// Start zoom-in transition
 					FlxTween.tween(FlxG.camera, {zoom: 1.5}, 0.5, {
-						ease: FlxEase.quadIn,
+						ease: FlxEase.backInOut,
 						onComplete: Reflect.makeVarArgs(function(_) // Adjust callback to match expected type
 						{
 							FlxTransitionableState.skipNextTransIn = false;
