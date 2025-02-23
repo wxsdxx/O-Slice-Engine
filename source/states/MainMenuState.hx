@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 
 	var optionShit:Array<String> = [
 		'story_mode',
-		'freeplay',
+		//'freeplay',
 		'credits',
 		'options'
 	];
@@ -235,6 +235,8 @@ var characterPlay = JSON.play; */
 										PlayState.SONG.splashSkin = null;
 										PlayState.stageUI = 'normal';
 									}
+								case 'credits':
+									MusicBeatState.switchState(new CreditsState());
 							}
 						})
 					});
